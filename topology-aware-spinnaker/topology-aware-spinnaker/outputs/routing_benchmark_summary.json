@@ -1,0 +1,46 @@
+{
+  "null": {
+    "avg_baseline_energy": 8.0067,
+    "avg_adaptive_energy": 7.7067,
+    "avg_baseline_latency": 5.3333,
+    "avg_adaptive_latency": 4.75,
+    "avg_baseline_hops": 4.1667,
+    "avg_adaptive_hops": 4.1667,
+    "avg_baseline_congested_hops": 0.6667,
+    "avg_adaptive_congested_hops": 0.3333,
+    "fraction_paths_changed": 0.1667
+  },
+  "north_east_bias": {
+    "avg_baseline_energy": 8.0067,
+    "avg_adaptive_energy": 7.5733,
+    "avg_baseline_latency": 5.3333,
+    "avg_adaptive_latency": 6.4167,
+    "avg_baseline_hops": 4.1667,
+    "avg_adaptive_hops": 5.8333,
+    "avg_baseline_congested_hops": 0.6667,
+    "avg_adaptive_congested_hops": 0.3333,
+    "fraction_paths_changed": 0.5
+  },
+  "south_west_bias": {
+    "avg_baseline_energy": 8.0067,
+    "avg_adaptive_energy": 6.24,
+    "avg_baseline_latency": 5.3333,
+    "avg_adaptive_latency": 5.0833,
+    "avg_baseline_hops": 4.1667,
+    "avg_adaptive_hops": 4.5,
+    "avg_baseline_congested_hops": 0.6667,
+    "avg_adaptive_congested_hops": 0.3333,
+    "fraction_paths_changed": 0.3333
+  },
+  "energy_save": {
+    "avg_baseline_energy": 8.0067,
+    "avg_adaptive_energy": 5.1867,
+    "avg_baseline_latency": 5.3333,
+    "avg_adaptive_latency": 4.75,
+    "avg_baseline_hops": 4.1667,
+    "avg_adaptive_hops": 4.1667,
+    "avg_baseline_congested_hops": 0.6667,
+    "avg_adaptive_congested_hops": 0.3333,
+    "fraction_paths_changed": 0.1667
+  }
+}

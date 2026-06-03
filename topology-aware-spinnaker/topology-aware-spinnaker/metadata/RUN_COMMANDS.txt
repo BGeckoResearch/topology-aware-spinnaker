@@ -1,0 +1,16 @@
+Exact commands used to run the SpiNNaker experiments
+
+1. Import check
+C:\Users\burge\.openclaw\workspace\spinnaker-routing-env\Scripts\python.exe -c "import pacman, spinn_machine, spinnaker_graph_front_end as gfe; print('pacman', pacman.__version__); print('spinn_machine', spinn_machine.__version__); print('gfe', gfe.__version__)"
+
+2. Virtual-mode probe
+C:\Users\burge\.openclaw\workspace\spinnaker-routing-env\Scripts\python.exe C:\Users\burge\.openclaw\workspace\spinnaker-routing-env\virtual_mode_check.py
+
+3. Initial routing scaffold
+C:\Users\burge\.openclaw\workspace\spinnaker-routing-env\Scripts\python.exe C:\Users\burge\.openclaw\workspace\spinnaker-routing-env\topology_routing_experiment.py
+
+4. Narrow benchmark harness
+C:\Users\burge\.openclaw\workspace\spinnaker-routing-env\Scripts\python.exe C:\Users\burge\.openclaw\workspace\spinnaker-routing-env\benchmark_routing_paper.py
+
+5. Audited benchmark harness
+C:\Users\burge\.openclaw\workspace\spinnaker-routing-env\Scripts\python.exe C:\Users\burge\.openclaw\workspace\spinnaker-routing-env\benchmark_audit.py

@@ -1,0 +1,14 @@
+SpiNNaker reproducibility package
+
+Prepared from workspace artifacts on 2026-04-06.
+
+Environment summary:
+- Host Python: 3.14.3
+- Virtual environment: C:\Users\burge\.openclaw\workspace\spinnaker-routing-env
+- SpiNNakerGraphFrontEnd: 1!7.4.1
+- SpiNNaker_PACMAN / pacman: 1!7.4.1
+- SpiNNMachine: 1!7.4.1
+
+Version/commit information:
+- git commit: unavailable in current shell environment (git not installed / not on PATH)
+- Reproducibility should therefore rely on the archived package contents plus this metadata file.

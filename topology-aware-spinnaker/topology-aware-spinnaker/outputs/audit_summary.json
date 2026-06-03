@@ -1,0 +1,347 @@
+{
+  "baseline_definition": {
+    "routing_behavior": "Standard static routing baseline represented as shortest-path routing under standard routing keys only, with no space-bit dispatch refinement.",
+    "processor_mask_behavior": "Full local fan-out with 18 active processor bits on every local-delivery event.",
+    "local_core_delivery_behavior": "Local delivery is fixed by the base route only; no adaptive processor-mask refinement is applied."
+  },
+  "proposed_method_definition": {
+    "space_bits_representation": "Simulated as software dispatch-class policies that can reorder/restrict preferred directions and/or reduce local processor-mask size.",
+    "refinement_location": "Inter-chip direction refinement is modeled as Router-side policy; processor-mask refinement is modeled as SNoC/local-delivery-side policy.",
+    "favoring_assumptions": "No extra route-table capacity is granted to the proposed method. The same source/destination/hotspot workloads are used for all ablations. However, the energy metric is a synthetic proxy that rewards lower mask size by construction."
+  },
+  "energy_metric": {
+    "formula": "energy_proxy = hops + 0.18 * mask_size + 0.9 * congested_hops",
+    "type": "synthetic simulation proxy",
+    "limitations": "Not hardware calibrated; does not model packet buffering, actual router micro-activity, SDRAM energy, monitor-core control overhead, or physical SNoC timing."
+  },
+  "summary_by_ablation": {
+    "baseline": {
+      "energy_reduction_percent": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "n": 960
+      },
+      "latency_reduction_percent": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "n": 960
+      },
+      "baseline_energy_proxy": {
+        "mean": 8.475729,
+        "std": 2.154676,
+        "min": 5.24,
+        "max": 17.04,
+        "n": 960
+      },
+      "tested_energy_proxy": {
+        "mean": 8.475729,
+        "std": 2.154676,
+        "min": 5.24,
+        "max": 17.04,
+        "n": 960
+      },
+      "baseline_latency_proxy": {
+        "mean": 5.489844,
+        "std": 2.375403,
+        "min": 2.0,
+        "max": 15.5,
+        "n": 960
+      },
+      "tested_latency_proxy": {
+        "mean": 5.489844,
+        "std": 2.375403,
+        "min": 2.0,
+        "max": 15.5,
+        "n": 960
+      },
+      "path_changed_fraction": {
+        "mean": 0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "n": 960
+      }
+    },
+    "space_bits_only": {
+      "energy_reduction_percent": {
+        "mean": 1.402247,
+        "std": 4.07891,
+        "min": -13.681592,
+        "max": 30.405405,
+        "n": 960
+      },
+      "latency_reduction_percent": {
+        "mean": 3.80916,
+        "std": 10.017603,
+        "min": -16.27907,
+        "max": 58.333333,
+        "n": 960
+      },
+      "baseline_energy_proxy": {
+        "mean": 8.475729,
+        "std": 2.154676,
+        "min": 5.24,
+        "max": 17.04,
+        "n": 960
+      },
+      "tested_energy_proxy": {
+        "mean": 8.340521,
+        "std": 2.089988,
+        "min": 5.24,
+        "max": 16.14,
+        "n": 960
+      },
+      "baseline_latency_proxy": {
+        "mean": 5.489844,
+        "std": 2.375403,
+        "min": 2.0,
+        "max": 15.5,
+        "n": 960
+      },
+      "tested_latency_proxy": {
+        "mean": 5.211198,
+        "std": 2.194956,
+        "min": 2.0,
+        "max": 14.5,
+        "n": 960
+      },
+      "path_changed_fraction": {
+        "mean": 0.153125,
+        "std": 0.360108,
+        "min": 0,
+        "max": 1,
+        "n": 960
+      }
+    },
+    "mask_only": {
+      "energy_reduction_percent": {
+        "mean": 16.878359,
+        "std": 12.414965,
+        "min": 0.0,
+        "max": 48.091603,
+        "n": 960
+      },
+      "latency_reduction_percent": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "n": 960
+      },
+      "baseline_energy_proxy": {
+        "mean": 8.475729,
+        "std": 2.154676,
+        "min": 5.24,
+        "max": 17.04,
+        "n": 960
+      },
+      "tested_energy_proxy": {
+        "mean": 7.125729,
+        "std": 2.349148,
+        "min": 2.72,
+        "max": 16.14,
+        "n": 960
+      },
+      "baseline_latency_proxy": {
+        "mean": 5.489844,
+        "std": 2.375403,
+        "min": 2.0,
+        "max": 15.5,
+        "n": 960
+      },
+      "tested_latency_proxy": {
+        "mean": 5.489844,
+        "std": 2.375403,
+        "min": 2.0,
+        "max": 15.5,
+        "n": 960
+      },
+      "path_changed_fraction": {
+        "mean": 0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "n": 960
+      }
+    },
+    "both": {
+      "energy_reduction_percent": {
+        "mean": 18.280606,
+        "std": 12.759755,
+        "min": -12.035011,
+        "max": 48.091603,
+        "n": 960
+      },
+      "latency_reduction_percent": {
+        "mean": 3.80916,
+        "std": 10.017603,
+        "min": -16.27907,
+        "max": 58.333333,
+        "n": 960
+      },
+      "baseline_energy_proxy": {
+        "mean": 8.475729,
+        "std": 2.154676,
+        "min": 5.24,
+        "max": 17.04,
+        "n": 960
+      },
+      "tested_energy_proxy": {
+        "mean": 6.990521,
+        "std": 2.285953,
+        "min": 2.72,
+        "max": 16.14,
+        "n": 960
+      },
+      "baseline_latency_proxy": {
+        "mean": 5.489844,
+        "std": 2.375403,
+        "min": 2.0,
+        "max": 15.5,
+        "n": 960
+      },
+      "tested_latency_proxy": {
+        "mean": 5.211198,
+        "std": 2.194956,
+        "min": 2.0,
+        "max": 14.5,
+        "n": 960
+      },
+      "path_changed_fraction": {
+        "mean": 0.153125,
+        "std": 0.360108,
+        "min": 0,
+        "max": 1,
+        "n": 960
+      }
+    },
+    "null_dispatch": {
+      "energy_reduction_percent": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "n": 960
+      },
+      "latency_reduction_percent": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "n": 960
+      },
+      "baseline_energy_proxy": {
+        "mean": 8.475729,
+        "std": 2.154676,
+        "min": 5.24,
+        "max": 17.04,
+        "n": 960
+      },
+      "tested_energy_proxy": {
+        "mean": 8.475729,
+        "std": 2.154676,
+        "min": 5.24,
+        "max": 17.04,
+        "n": 960
+      },
+      "baseline_latency_proxy": {
+        "mean": 5.489844,
+        "std": 2.375403,
+        "min": 2.0,
+        "max": 15.5,
+        "n": 960
+      },
+      "tested_latency_proxy": {
+        "mean": 5.489844,
+        "std": 2.375403,
+        "min": 2.0,
+        "max": 15.5,
+        "n": 960
+      },
+      "path_changed_fraction": {
+        "mean": 0,
+        "std": 0.0,
+        "min": 0,
+        "max": 0,
+        "n": 960
+      }
+    }
+  },
+  "stress_test_by_condition_for_both": {
+    "traffic_level": {
+      "high": {
+        "energy_reduction_percent_mean": 18.935744,
+        "energy_reduction_percent_std": 12.880072,
+        "latency_reduction_percent_mean": 6.585662,
+        "latency_reduction_percent_std": 12.725953,
+        "n": 320
+      },
+      "low": {
+        "energy_reduction_percent_mean": 17.903155,
+        "energy_reduction_percent_std": 12.534175,
+        "latency_reduction_percent_mean": 2.145,
+        "latency_reduction_percent_std": 7.479734,
+        "n": 320
+      },
+      "medium": {
+        "energy_reduction_percent_mean": 18.002918,
+        "energy_reduction_percent_std": 12.8368,
+        "latency_reduction_percent_mean": 2.696819,
+        "latency_reduction_percent_std": 8.452523,
+        "n": 320
+      }
+    },
+    "destination_pattern": {
+      "clustered": {
+        "energy_reduction_percent_mean": 19.7967,
+        "energy_reduction_percent_std": 13.656011,
+        "latency_reduction_percent_mean": 3.547,
+        "latency_reduction_percent_std": 10.129861,
+        "n": 480
+      },
+      "dispersed": {
+        "energy_reduction_percent_mean": 16.764511,
+        "energy_reduction_percent_std": 11.599093,
+        "latency_reduction_percent_mean": 4.071321,
+        "latency_reduction_percent_std": 9.897132,
+        "n": 480
+      }
+    },
+    "routing_pressure": {
+      "high": {
+        "energy_reduction_percent_mean": 18.723699,
+        "energy_reduction_percent_std": 12.854041,
+        "latency_reduction_percent_mean": 5.13356,
+        "latency_reduction_percent_std": 11.199816,
+        "n": 480
+      },
+      "low": {
+        "energy_reduction_percent_mean": 17.837512,
+        "energy_reduction_percent_std": 12.649255,
+        "latency_reduction_percent_mean": 2.484761,
+        "latency_reduction_percent_std": 8.471175,
+        "n": 480
+      }
+    },
+    "topology": {
+      "12x12": {
+        "energy_reduction_percent_mean": 17.064133,
+        "energy_reduction_percent_std": 12.45493,
+        "latency_reduction_percent_mean": 1.962318,
+        "latency_reduction_percent_std": 7.059091,
+        "n": 480
+      },
+      "8x8": {
+        "energy_reduction_percent_mean": 19.497078,
+        "energy_reduction_percent_std": 12.943639,
+        "latency_reduction_percent_mean": 5.656003,
+        "latency_reduction_percent_std": 12.00218,
+        "n": 480
+      }
+    }
+  }
+}
